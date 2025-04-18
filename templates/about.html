@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Cancer Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="/">Multi-Cancer Detection System</a>
+        </div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/detection">Detection</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/about" class="active">About</a>
+            <a href="/cancer-types">Cancer Types</a>
+            <button id="themeToggle" class="theme-toggle" title="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>About Our Project</h1>
+            <p>Advancing cancer detection through artificial intelligence</p>
+        </header>
+
+        <main>
+            <section class="about-section">
+                <div class="about-content">
+                    <h2>Our Mission</h2>
+                    <p>We are dedicated to making cancer detection more accessible and accurate through the power of artificial intelligence. Our system uses advanced deep learning models to analyze medical scans and provide quick, reliable results for various types of cancer.</p>
+                    
+                    <h2>Technology</h2>
+                    <p>Our system is built using state-of-the-art deep learning techniques, specifically the ResNet50 architecture, which has been fine-tuned for medical image analysis. The model has been trained on a diverse dataset of medical scans to ensure reliable detection across different cases.</p>
+                    
+                    <h2>Features</h2>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Real-time cancer detection</li>
+                        <li><i class="fas fa-check-circle"></i> Support for multiple cancer types</li>
+                        <li><i class="fas fa-check-circle"></i> High accuracy rates</li>
+                        <li><i class="fas fa-check-circle"></i> User-friendly interface</li>
+                        <li><i class="fas fa-check-circle"></i> Instant results</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="team-section">
+                <h2>Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <i class="fas fa-user-circle"></i>
+                        <h3>AI Researcher</h3>
+                        <p>Deep Learning Expert</p>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-user-circle"></i>
+                        <h3>Medical Advisor</h3>
+                        <p>Healthcare Professional</p>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-user-circle"></i>
+                        <h3>Software Developer</h3>
+                        <p>Full Stack Engineer</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/detection">Detection</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Email: support@cancerdetection.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Disclaimer: This tool is for educational purposes only. Always consult with healthcare professionals for medical advice.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 

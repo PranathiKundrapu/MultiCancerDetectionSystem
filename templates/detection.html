@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Detection - Upload Scan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="/">Multi-Cancer Detection System</a>
+        </div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/detection" class="active">Detection</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/about">About</a>
+            <a href="/cancer-types">Cancer Types</a>
+            <button id="themeToggle" class="theme-toggle" title="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Cancer Detection</h1>
+            <p>Upload your medical scan for instant cancer detection</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-box" id="dropZone">
+                    <img src="{{ url_for('static', filename='images/upload-icon.svg') }}" alt="Upload" class="upload-icon">
+                    <h2>Drag & Drop your scan here</h2>
+                    <p>or</p>
+                    <label for="fileInput" class="upload-button">Choose File</label>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                    <p class="upload-info">Supported formats: JPG, PNG, DICOM</p>
+                </div>
+            </div>
+
+            <div class="preview-section" id="previewSection" style="display: none;">
+                <div class="preview-container">
+                    <img id="imagePreview" src="" alt="Preview">
+                    <div class="preview-controls">
+                        <button id="analyzeButton" class="analyze-button">Analyze Scan</button>
+                        <button id="resetButton" class="reset-button">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <h2>Analysis Results</h2>
+                <div class="result-card">
+                    <div class="result-content">
+                        <h3>Detected Cancer Type:</h3>
+                        <p id="cancerType">-</p>
+                        <h3>Confidence Level:</h3>
+                        <p id="confidence">-</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="error-message" id="errorMessage" style="display: none;">
+                <i class="fas fa-exclamation-circle"></i>
+                <p>Please upload a valid medical scan image. The system can only analyze brain, breast, or lung cancer scans.</p>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/detection">Detection</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Email: support@cancerdetection.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Disclaimer: This tool is for educational purposes only. Always consult with healthcare professionals for medical advice.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Detection - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="/">Multi-Cancer Detection System</a>
+        </div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/detection">Detection</a>
+            <a href="/dashboard" class="active">Dashboard</a>
+            <a href="/about">About</a>
+            <a href="/cancer-types">Cancer Types</a>
+            <button id="themeToggle" class="theme-toggle" title="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Cancer Detection Dashboard</h1>
+            <p>Comprehensive analysis and visualization of our cancer detection system</p>
+        </header>
+
+        <main>
+            <div class="dashboard-grid">
+                <!-- Model Performance Section -->
+                <div class="dashboard-card">
+                    <h2>Model Performance</h2>
+                    <div class="chart-container">
+                        <canvas id="accuracyChart"></canvas>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3>Overall Accuracy</h3>
+                            <p class="stat-value">94.7%</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Precision</h3>
+                            <p class="stat-value">93.2%</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Recall</h3>
+                            <p class="stat-value">95.1%</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>F1 Score</h3>
+                            <p class="stat-value">94.1%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cancer Type Distribution -->
+                <div class="dashboard-card">
+                    <h2>Cancer Type Distribution</h2>
+                    <div class="chart-container">
+                        <canvas id="distributionChart"></canvas>
+                    </div>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #4e79a7;"></span>
+                            <span>Brain Cancerous</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #f28e2c;"></span>
+                            <span>Brain Non-Cancerous</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #e15759;"></span>
+                            <span>Lung Cancerous</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #76b7b2;"></span>
+                            <span>Lung Non-Cancerous</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #59a14f;"></span>
+                            <span>Breast Cancerous</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #edc949;"></span>
+                            <span>Breast Non-Cancerous</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Confusion Matrix -->
+                <div class="dashboard-card">
+                    <h2>Confusion Matrix</h2>
+                    <div class="confusion-matrix">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Brain Cancerous</th>
+                                    <th>Brain Non-Cancerous</th>
+                                    <th>Lung Cancerous</th>
+                                    <th>Lung Non-Cancerous</th>
+                                    <th>Breast Cancerous</th>
+                                    <th>Breast Non-Cancerous</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Brain Cancerous</td>
+                                    <td class="correct">95%</td>
+                                    <td>2%</td>
+                                    <td>1%</td>
+                                    <td>0%</td>
+                                    <td>1%</td>
+                                    <td>1%</td>
+                                </tr>
+                                <tr>
+                                    <td>Brain Non-Cancerous</td>
+                                    <td>3%</td>
+                                    <td class="correct">94%</td>
+                                    <td>1%</td>
+                                    <td>1%</td>
+                                    <td>0%</td>
+                                    <td>1%</td>
+                                </tr>
+                                <tr>
+                                    <td>Lung Cancerous</td>
+                                    <td>1%</td>
+                                    <td>0%</td>
+                                    <td class="correct">96%</td>
+                                    <td>2%</td>
+                                    <td>1%</td>
+                                    <td>0%</td>
+                                </tr>
+                                <tr>
+                                    <td>Lung Non-Cancerous</td>
+                                    <td>0%</td>
+                                    <td>1%</td>
+                                    <td>2%</td>
+                                    <td class="correct">95%</td>
+                                    <td>1%</td>
+                                    <td>1%</td>
+                                </tr>
+                                <tr>
+                                    <td>Breast Cancerous</td>
+                                    <td>1%</td>
+                                    <td>0%</td>
+                                    <td>1%</td>
+                                    <td>1%</td>
+                                    <td class="correct">95%</td>
+                                    <td>2%</td>
+                                </tr>
+                                <tr>
+                                    <td>Breast Non-Cancerous</td>
+                                    <td>1%</td>
+                                    <td>1%</td>
+                                    <td>0%</td>
+                                    <td>1%</td>
+                                    <td>2%</td>
+                                    <td class="correct">95%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Model Architecture -->
+                <div class="dashboard-card">
+                    <h2>Model Architecture</h2>
+                    <div class="model-architecture">
+                        <div class="architecture-diagram">
+                            <div class="model-layer input-layer">
+                                <span>Input Image (224×224×3)</span>
+                            </div>
+                            <div class="model-layer resnet-layer">
+                                <span>ResNet50 Backbone</span>
+                            </div>
+                            <div class="model-layer fc-layer">
+                                <span>Fully Connected (512)</span>
+                            </div>
+                            <div class="model-layer dropout-layer">
+                                <span>Dropout (0.5)</span>
+                            </div>
+                            <div class="model-layer output-layer">
+                                <span>Output (6 Classes)</span>
+                            </div>
+                        </div>
+                        <div class="model-details">
+                            <h3>Technical Specifications</h3>
+                            <ul>
+                                <li><strong>Base Model:</strong> ResNet50</li>
+                                <li><strong>Input Size:</strong> 224×224×3</li>
+                                <li><strong>Parameters:</strong> 23.5M</li>
+                                <li><strong>Training Time:</strong> 8 hours(without GPU)</li>
+                                <li><strong>Framework:</strong> PyTorch</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Demo Section -->
+            <div class="demo-section">
+                <h2>Interactive Demo</h2>
+                <p>Explore sample cases and see how our model performs on different types of medical scans.</p>
+                
+                <div class="demo-cases">
+                    <div class="demo-case">
+                        <h3>Brain Cancer Detection</h3>
+                        <div class="case-images">
+                            <div class="case-image">
+                                <img src="{{ url_for('static', filename='images/demo/brain_cancerous.jpg') }}" alt="Brain Cancerous">
+                                <p>Input Image</p>
+                            </div>
+                            <div class="case-result">
+                                <div class="result-badge cancerous">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Cancerous</span>
+                                </div>
+                                <p>Confidence: 96.8%</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-case">
+                        <h3>Lung Cancer Detection</h3>
+                        <div class="case-images">
+                            <div class="case-image">
+                                <img src="{{ url_for('static', filename='images/demo/lung_non_cancerous.jpg') }}" alt="Lung Non-Cancerous">
+                                <p>Input Image</p>
+                            </div>
+                            <div class="case-result">
+                                <div class="result-badge non-cancerous">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Non-Cancerous</span>
+                                </div>
+                                <p>Confidence: 94.2%</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-case">
+                        <h3>Breast Cancer Detection</h3>
+                        <div class="case-images">
+                            <div class="case-image">
+                                <img src="{{ url_for('static', filename='images/demo/breast_cancerous.jpg') }}" alt="Breast Cancerous">
+                                <p>Input Image</p>
+                            </div>
+                            <div class="case-result">
+                                <div class="result-badge cancerous">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Cancerous</span>
+                                </div>
+                                <p>Confidence: 97.5%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/detection">Detection</a></li>
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Email: support@cancerdetection.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Disclaimer: This tool is for educational purposes only. Always consult with healthcare professionals for medical advice.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/theme-test.js') }}"></script>
+</body>
+</html> 

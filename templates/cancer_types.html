@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Types - Cancer Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="/">Multi-Cancer Detection System</a>
+        </div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/detection">Detection</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/about">About</a>
+            <a href="/cancer-types" class="active">Cancer Types</a>
+            <button id="themeToggle" class="theme-toggle" title="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Types of Cancer We Detect</h1>
+            <p>Learn about the different types of cancer our system can identify</p>
+        </header>
+
+        <main>
+            <div class="cancer-types-grid">
+                <div class="cancer-type-card">
+                    <div class="cancer-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h2>Brain Cancer</h2>
+                    <div class="cancer-content">
+                        <h3>Overview</h3>
+                        <p>Brain cancer occurs when abnormal cells form in the brain tissue. It can be primary (originating in the brain) or secondary (spread from other parts of the body).</p>
+                        
+                        <h3>Common Symptoms</h3>
+                        <ul>
+                            <li>Headaches</li>
+                            <li>Seizures</li>
+                            <li>Memory problems</li>
+                            <li>Balance issues</li>
+                            <li>Vision changes</li>
+                        </ul>
+                        
+                        <h3>Detection Method</h3>
+                        <p>Our system analyzes MRI scans to detect abnormalities in brain tissue.</p>
+                    </div>
+                </div>
+
+                <div class="cancer-type-card">
+                    <div class="cancer-icon">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h2>Breast Cancer</h2>
+                    <div class="cancer-content">
+                        <h3>Overview</h3>
+                        <p>Breast cancer develops in the breast tissue, most commonly in the ducts or lobules. It's one of the most common types of cancer in women.</p>
+                        
+                        <h3>Common Symptoms</h3>
+                        <ul>
+                            <li>Lump in breast</li>
+                            <li>Breast pain</li>
+                            <li>Nipple discharge</li>
+                            <li>Skin changes</li>
+                            <li>Swelling</li>
+                        </ul>
+                        
+                        <h3>Detection Method</h3>
+                        <p>Our system analyzes mammograms to identify potential cancerous growths.</p>
+                    </div>
+                </div>
+
+                <div class="cancer-type-card">
+                    <div class="cancer-icon">
+                        <i class="fas fa-lungs"></i>
+                    </div>
+                    <h2>Lung Cancer</h2>
+                    <div class="cancer-content">
+                        <h3>Overview</h3>
+                        <p>Lung cancer begins in the lungs and is often associated with smoking. It's one of the leading causes of cancer-related deaths worldwide.</p>
+                        
+                        <h3>Common Symptoms</h3>
+                        <ul>
+                            <li>Persistent cough</li>
+                            <li>Shortness of breath</li>
+                            <li>Chest pain</li>
+                            <li>Weight loss</li>
+                            <li>Fatigue</li>
+                        </ul>
+                        
+                        <h3>Detection Method</h3>
+                        <p>Our system analyzes chest X-rays and CT scans to identify lung abnormalities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prevention-section">
+                <h2>Prevention Tips</h2>
+                <div class="prevention-grid">
+                    <div class="prevention-card">
+                        <i class="fas fa-smoking-ban"></i>
+                        <h3>Avoid Smoking</h3>
+                        <p>Smoking is a major risk factor for many types of cancer, especially lung cancer.</p>
+                    </div>
+                    <div class="prevention-card">
+                        <i class="fas fa-apple-alt"></i>
+                        <h3>Healthy Diet</h3>
+                        <p>Maintain a balanced diet rich in fruits, vegetables, and whole grains.</p>
+                    </div>
+                    <div class="prevention-card">
+                        <i class="fas fa-running"></i>
+                        <h3>Regular Exercise</h3>
+                        <p>Stay physically active to maintain a healthy weight and boost immunity.</p>
+                    </div>
+                    <div class="prevention-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3>Regular Check-ups</h3>
+                        <p>Schedule regular medical check-ups and screenings.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/detection">Detection</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Email: support@cancerdetection.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Disclaimer: This tool is for educational purposes only. Always consult with healthcare professionals for medical advice.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 

@@ -1,0 +1,7 @@
+
+flask==2.0.1
+tensorflow==2.15.0
+numpy>=1.23.5,<2.0.0  # Required by TensorFlow 2.15.0
+pillow==8.3.2
+werkzeug==2.0.1
+opencv-python==4.8.1.78  # Compatible with Python 3.8/3.9 
