@@ -16,12 +16,14 @@ This project is a deep learning-based system for detecting **brain**, **lung**, 
 
 Due to GitHub file size limits, the model and dataset are available via Google Drive:
 
-- 🔗 [Download Model File (`multicancer_detection_resnet50.pth`)([](https://drive.google.com/file/d/1plc3rtYftRDt3dgYlR47ZpBjuVwBfsbD/view?usp=sharing)
-- 🔗 [Download Dataset]([](https://drive.google.com/drive/folders/179Zl0DUJ-ewFtqnp0DCulIvNHD-klUDb?usp=sharing)
-
+- 🔗 [Download Model File (`trailbest_cancer_model.pth`)](https://drive.google.com/file/d/1plc3rtYftRDt3dgYlR47ZpBjuVwBfsbD/view?usp=sharing)
+- 🔗 [Download Dataset](https://drive.google.com/drive/folders/179Zl0DUJ-ewFtqnp0DCulIvNHD-klUDb?usp=sharing)
+ if the links are not acessible, try the below:
+dataset: https://drive.google.com/drive/folders/179Zl0DUJ-ewFtqnp0DCulIvNHD-klUDb?usp=sharing
+model.pth: https://drive.google.com/file/d/1plc3rtYftRDt3dgYlR47ZpBjuVwBfsbD/view?usp=sharing
 After downloading:
-- Place the model file in a folder named `weights/`
-- Place the dataset in a folder named `data/`
+- Place the model file and do the necessary path settings
+- Place the dataset and do the necessary path changings in your local system
 
 ---
 
